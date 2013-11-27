@@ -10,7 +10,8 @@
 	co = checkout
 	cu = !git fetch --all && git pull --rebase origin && git submodule update
    	done = !git fetch && git rebase origin/master && git checkout master && git merge @{-1} && rake && git push
-	ll = log --stat --abbrev-commit
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
 	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
 [push]
 	default = matching
