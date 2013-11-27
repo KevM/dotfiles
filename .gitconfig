@@ -1,0 +1,16 @@
+[user]
+	name = KevM
+	email = scoundrel@gmail.com
+[alias]
+	s = status
+	c = commit -m
+	cm = commit -am
+	aa = !git add . && git add -u && git status
+	fa = fetch --all
+	co = checkout
+	cu = !git fetch --all && git pull --rebase origin && git submodule update
+   	done = !git fetch && git rebase origin/master && git checkout master && git merge @{-1} && rake && git push
+	ll = log --stat --abbrev-commit
+	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
+[push]
+	default = matching
